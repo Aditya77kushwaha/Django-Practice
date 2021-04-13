@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for x in data %}
+<ul>
+    <li>{{x.question}}</li>
+    {% if x.choice == True %}
+    <li class="btn btn-sm round btn-primary disabled">{{x.choice}}</li>
+    {% else %}
+    <li class="btn btn-sm round btn-danger disabled">{{x.choice}}</li>
+    {% endif %}
+    <li><img src={{x.pfp}} /></li>
+</ul>
+<hr />
+{% endfor %}
+{% endblock %}
