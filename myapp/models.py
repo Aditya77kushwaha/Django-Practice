@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.forms import ModelForm
 # Create your models here.
 
 
@@ -11,3 +11,10 @@ class MyModel(models.Model):
 
     def __str__(self):
         return self.question
+
+
+class MyForm(ModelForm):
+    """Form for respective Models"""
+    class Meta:
+        model = MyModel
+        fields = ['question', 'choice', 'pfp']
